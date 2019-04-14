@@ -1,5 +1,4 @@
-<header class="main-header">
-
+<header class="main-header" *ngIf="isLoggedIn$ | async">
   <!-- Logo -->
   <a href="index2.html" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -251,7 +250,7 @@
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="#" class="btn btn-default btn-flat" (click)="onLogout()" *ngIf="isLoggedIn$ | async">Sign out</a>
               </div>
             </li>
           </ul>
